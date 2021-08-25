@@ -1,0 +1,17 @@
+<h2>Exercice 2 : Todo List</h2>
+
+<div *ngFor="let user of userList; let indexValue = index">
+    <app-todo-list-item 
+                [userForChildInput]="user"
+                [indexUser]="indexValue"
+                (removeValueOutput)="handleRemoveValue($event)"
+                (selectUserOutput)="handleSelectUser($event)"
+                >
+    </app-todo-list-item>
+</div>
+
+<app-todo-list-add-item (addValueOutputForChild)="handleAddValue($event)"></app-todo-list-add-item>
+
+<h3>TodoList Detail</h3>
+<app-todo-list-detail [userSelectedInput]="userSelected"></app-todo-list-detail>
+

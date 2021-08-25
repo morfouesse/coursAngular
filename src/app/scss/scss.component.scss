@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+
+.app-parent {
+  background-color: $main-color-dark;
+
+  .app-parent__item {
+    color: white;
+  }
+
+  >.app-parent__item {
+    color: white;
+  }
+
+  & .app-parent__item {
+    color: white;
+  }
+
+  &>.app-parent__item {
+    color: white;
+  }
+}
+
+/* INCLUDE */
+
+@mixin no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin default-state {
+  @include no-margin-padding;
+  color: black;
+  background-color: white;
+}
+
+.app-mixin-include {
+  @include default-state;
+}
+
+/*GENERATE CSS*/
+
+.app-border {
+  border: 2px solid black;
+}
+
+@mixin no-border($side) {
+  @if $side == 'all' {
+      .u-no-border {
+          border: none;
+      }
+  } @else {
+      .u-no-border-#{$side} {
+          border-#{$side}: 0;
+      }
+  }
+}
+@include no-border("left");
+@include no-border("right");
+@include no-border("top");
+@include no-border("bottom");
+@include no-border("all");

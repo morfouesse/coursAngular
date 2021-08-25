@@ -1,0 +1,22 @@
+<h2>Pipe</h2>
+
+<h3>| lowercase</h3>
+{{stringValue | lowercase}}
+
+<h3>| uppercase</h3>
+{{stringValue | uppercase}}
+
+<h3>| json</h3>
+<p>{{jsonValue}}</p>
+<p>{{jsonValue | json}}</p>
+
+<h3>| date</h3>
+{{dateValue | date:'dd/MM/yyyy'}}
+
+<h3>Custom Pipe</h3>
+<input type="number" [(ngModel)]="inputNumberValue" />
+
+<div *ngFor="let user of userList | filterByAge: inputNumberValue">
+    Name : {{user.name}} - Surname {{user.surname}} - Age {{user.age}}
+</div>
+

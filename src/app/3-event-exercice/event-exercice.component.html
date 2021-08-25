@@ -1,0 +1,26 @@
+<h1>Exercice event directive</h1>
+
+
+<h2>Exercice 1</h2>
+<button (click)="handleAddCount()">Add+1</button>
+<p>{{countValue}}</p>
+
+<h2>Exercice 2</h2>
+<button (click)="handleChangeSpoilerBoolean()">Spoiler</button>
+<p [hidden]="!isDisplay">Ceci est un texte</p>
+
+<h2>Exercice 3</h2>
+<button (click)="handleChangeCssClass('app-bg-blue')">Change color app-bg-blue</button>
+<button (click)="handleChangeCssClass('app-bg-green')">Change color app-bg-green</button>
+<button (click)="handleChangeCssClass('app-bg-red')">Change color app-bg-red</button>
+<p [ngClass]="cssClassValue">Ceci est un texte pour la couleur</p>
+
+<h2>Exercice 4</h2>
+<select [(ngModel)]="userValue" (change)="handleCallConsoleWithUserValue()">
+    <option *ngFor="let user of userList">
+        {{user}}
+    </option>
+</select>
+
+<p>Utilisateur selectionné : {{userValue}}</p>
+

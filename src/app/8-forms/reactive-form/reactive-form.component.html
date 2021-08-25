@@ -1,0 +1,36 @@
+<form (ngSubmit)="handleSubmitForm()" [formGroup]="loginForm">
+
+    <div>
+        <label for="usernameControl">Username</label>
+        <input id="usernameControl" type="text"
+            [ngClass]="{'app-error': usernameControl.invalid && usernameControl.dirty}"
+            formControlName="usernameControl" />
+        <span class="app-message-error" [hidden]="usernameControl.valid || usernameControl.pristine">Il y a une erreur
+            !</span>
+    </div>
+    <div>
+        <label for="passwordControl">
+            Password
+        </label>
+        <input id="passwordControl" type="password"
+            [ngClass]="{'app-error': passwordControl.invalid && passwordControl.dirty}"
+            formControlName="passwordControl" 
+            maxlength="10"/>
+        <span class="app-message-error" [hidden]="!passwordControl.hasError('required') || passwordControl.pristine">Un
+            password est requis!</span>
+        <span class="app-message-error" [hidden]="!passwordControl.hasError('minlength') || passwordControl.pristine">Il
+            faut 4
+            caractères minimum !</span>
+        <span class="app-message-error" [hidden]="!passwordControl.hasError('maxlength') || passwordControl.pristine">Il
+            faut 10
+            caractères maximum !</span>
+        <span class="app-message-error" [hidden]="!passwordControl.hasError('validPassword') || passwordControl.pristine">
+          Le password ne doit pas avoir 'erwan' dedans
+        </span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!loginForm.valid">
+            Login
+        </button>
+    </div>
+</form>

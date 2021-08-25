@@ -1,0 +1,71 @@
+<form (ngSubmit)="handleSubmitForm(loginFormValue)" #loginForm="ngForm">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" [(ngModel)]="loginFormValue.username" name="username" #username="ngModel"
+            [ngClass]="{'app-error': username.invalid && username.dirty }" required />
+        <span class="app-message-error" [hidden]="username.valid || username.pristine">Il y a une erreur !</span>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" [(ngModel)]="loginFormValue.password" name="password" #password="ngModel"
+            [ngClass]="{'app-error': password.invalid && password.dirty }" minlength="4" maxlength="10" required />
+        <span class="app-message-error" [hidden]="!password.hasError('required') || password.pristine">Ce champs est
+            obligatoire !
+        </span>
+        <span class="app-message-error" [hidden]="!password.hasError('minlength') || password.pristine">Il faut 4
+            caractères minimum pour le mot de passe !
+        </span>
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="!loginForm.form.valid">
+            Login
+        </button>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form (ngSubmit)="handleSubmitForm(formValue)" #loginForm="ngForm">
+    <div>
+        <label for="username">
+            Username
+        </label>
+        <input id="username" type="text" [ngClass]="{'app-error': username.invalid && username.dirty}"
+            [(ngModel)]="formValue.username" name="username" #username="ngModel" required />
+        <span class="app-message-error" [hidden]="username.valid || username.pristine">Il y a une erreur !</span>
+    </div>
+    <div>
+        <label for="password">
+            Password
+        </label>
+        <input class="app-error" id="password" type="password"
+            [ngClass]="{'app-error': password.invalid && password.dirty}" [(ngModel)]="formValue.password"
+            name="password" #password="ngModel" minlength="4" maxlength="10" required />
+        <span class="app-message-error" [hidden]="!password.hasError('required') || password.pristine">Un password est
+            requis!</span>
+        <span class="app-message-error" [hidden]="!password.hasError('minlength') || password.pristine">Il faut 4
+            caractères minimum !</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!loginForm.form.valid">
+            Login
+        </button>
+    </div>
+</form> -->

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+.app-table {
+    border: 2px solid black;
+    & th, & tr, & td {
+        border: 2px solid black;
+    }
+}
+
+.app-error {
+    background-color: red;
+}
+
+.app-message-error {
+    color: red;
+}
+
+.app-u-bgcolor--primary {
+  background-color: $main-color;
+}
+
+.app-u-bgcolor--primary-light {
+  background-color: $main-color-light;
+}
+
+.app-u-bgcolor--primary-dark {
+  background-color: $main-color-dark;
+}

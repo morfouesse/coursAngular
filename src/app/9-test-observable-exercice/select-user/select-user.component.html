@@ -1,0 +1,10 @@
+<h1>Select User</h1>
+
+
+<select [(ngModel)]="userSelected" (change)="handleChangeUserSelected()">
+    <option *ngFor="let user of userList" [ngValue]="user">
+        {{user.name + ' ' + user.surname}}
+    </option>
+</select>
+
+{{userSelected | json}}

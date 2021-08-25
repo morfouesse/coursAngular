@@ -1,0 +1,7 @@
+<p>shopping-parent works!</p>
+
+Name : <input type="text" [(ngModel)]="addInputNameValue" />
+Quantity : <input type="number" [(ngModel)]="addInputQuantityValue" />
+<button (click)="addValueInList(addInputNameValue, addInputQuantityValue)">Add Value</button>
+<app-shopping-child [shoppingListForChild]="shoppingList" (removeEvent)="removeItemByChild($event)">
+</app-shopping-child>

@@ -1,0 +1,4 @@
+<div *ngFor="let shoppingItem of shoppingListForChild; let i = index">
+    name :{{shoppingItem.name}} - quantity : {{shoppingItem.quantity}}
+    <button (click)="removeItem(i)">Remove</button>
+</div>

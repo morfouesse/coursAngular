@@ -1,0 +1,25 @@
+<h1>Exercice event directive</h1>
+
+
+<h2>Exercice 1</h2>
+<button (click)="handleAddCount()">Add +1</button>
+{{count}}
+
+<h2>Exercice 2</h2>
+<button (click)="handleChangeSpoilerBoolean()">Spoiler</button>
+<p [hidden]="!isSpoil">Ceci est un spoil</p>
+
+
+<h2>Exercice 3</h2>
+<button (click)="handleChangeCssClass('app-bg-green')">app-bg-green</button>
+<button (click)="handleChangeCssClass('app-bg-red')">app-bg-red</button>
+<button (click)="handleChangeCssClass('app-bg-blue')">app-bg-blue</button>
+<p [ngClass]="cssClassValue">Ceci est un texte</p>
+
+
+<h2>Exercice 4</h2>
+
+<select [(ngModel)]="userValue" (change)="handleCallConsoleWithUserValue()">
+    <option *ngFor="let user of userList">{{user}}</option>
+</select>
+{{userValue}}

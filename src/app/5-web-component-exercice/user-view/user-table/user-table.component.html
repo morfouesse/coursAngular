@@ -1,0 +1,10 @@
+<table class="app-table">
+    <thead>
+        <th>Name</th>
+        <th>Surname</th>
+    </thead>
+    <tbody>
+        <tr class="app-row" app-user-row [userForRow]="user" *ngFor="let user of userListForTable"
+            (click)="handleClickRow(user)"></tr>
+    </tbody>
+</table>

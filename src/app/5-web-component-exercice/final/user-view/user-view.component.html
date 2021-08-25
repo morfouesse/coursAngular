@@ -1,0 +1,4 @@
+<h1>Exercice 3 : Afficher des Users </h1>
+
+<app-user-table [userListForTable]="userList" (userEventForView)="handleEventCallByChild($event)"></app-user-table>
+<app-user-detail [userSelectedForDetail]="userSelected"></app-user-detail>

@@ -1,0 +1,7 @@
+<h2>Parent</h2>
+
+<p>Le parent a t-il été appelé ? {{isChildCallParent}}</p>
+
+<app-child [numberValueForChild]="numberValue" [stringValueForChild]="stringValue" [jsonValueForChild]="jsonValue"
+    (eventEmitterForChild)="callByChild($event)">
+</app-child>

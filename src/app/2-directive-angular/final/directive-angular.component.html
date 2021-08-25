@@ -1,0 +1,23 @@
+<h1>Directive Angular</h1>
+
+<div *ngIf="true">
+    Test If OK
+</div>
+<div *ngIf="false">
+    Test If KO
+</div>
+
+<div *ngIf="conditionTrue">
+    Test If OK
+</div>
+<div *ngIf="conditionFalse">
+    Test If KO
+</div>
+
+<div *ngFor="let element of listString">
+    {{element}}
+</div>
+
+<div [ngClass]="classValue">Ceci est un texte de test</div>
+
+<input type="text" [(ngModel)]="modelText" />

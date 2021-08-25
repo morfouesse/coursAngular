@@ -1,0 +1,27 @@
+<div>
+    <h1>Directive Angular Exercice</h1>
+    <h2>Exercice 1 :</h2>
+    <div *ngIf="conditionFalse; else displayTemplate">Condition IF OK</div>
+    <ng-template #displayTemplate>Condition Else</ng-template>
+
+    <h2>Exemple concret #var :</h2>
+    <table *ngIf="userList.length; else displayEmptyTableMessage">
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr *ngFor="let user of userList">
+            <td>{{user}}</td>
+        </tr>
+    </table>
+
+    <ng-template #displayEmptyTableMessage>Vous n'avez rien dans le tableau</ng-template>
+
+    <h2>Exercice 2 :</h2>
+    <input type="text" [(ngModel)]="inputValue" />
+    Hello {{inputValue}} !
+
+    <h2>Exercice 3 :</h2>
+    <div [hidden]="conditionTrue">Hidden true</div>
+    <div [hidden]="conditionFalse">Hidden false</div>
+
+</div>

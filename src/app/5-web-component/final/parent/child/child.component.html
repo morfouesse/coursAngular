@@ -1,0 +1,9 @@
+<h2>Child</h2>
+
+<p>Valeur number venant du parent : {{numberValueForChild}}</p>
+
+<p>Valeur string venant du parent : {{stringValueForChild}}</p>
+
+<p>Valeur json venant du parent : {{jsonValueForChild.number + ' ' + jsonValueForChild.string}}</p>
+
+<button (click)="callParent()">Appeler le parent</button>
